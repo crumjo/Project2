@@ -1,15 +1,15 @@
 //
-//  Student.h
+//  Concert.h
 //  basic
 //
 //  Created by Joshua Crum on 10/4/17.
 //  Copyright © 2017 Joshua Crum. All rights reserved.
 //
 
-#ifndef Student_h
-#define Student_h
+#ifndef Concert_h
+#define Concert_h
 
-#endif /* Student_hpp */
+#endif /* Concert_h */
 
 #include <string>
 #include <vector>
