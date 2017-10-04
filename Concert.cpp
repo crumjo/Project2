@@ -7,6 +7,7 @@
 //
 
 #include "Concert.h"
+#include <ctime>
 #include <string>
 #include <vector>
 
@@ -19,9 +20,9 @@ std::tm date;
 
 Concert::Concert() {
     concertName = "None";
-    std::vector<std::string> friends;
+    friends = [""];
     desire = 0;
-    date = std::tm(NULL);
+    date = { .tm_mday = 1 }; //FIX ME
 }
 
 
