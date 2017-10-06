@@ -20,7 +20,7 @@ std::tm date;
 
 Concert::Concert() {
     concertName = "None";
-    friends = new vector<std::string>('s',0);
+    friends = {""};
     desire = 0;
     date = { .tm_mday = 1 }; //FIX ME
 }
@@ -33,33 +33,41 @@ Concert::Concert(std::string concertName, std::vector<std::string> friends, int 
     this -> date = date;
 }
 
+
 std::string getName(){
     return concertName;
 }
+
 
 std::vector<std::string> getFriends(){
     return friends;
 }
 
+
 int getDesire(){
     return desire;
 }
+
 
 std::tm getDate(){
     return date;
 }
 
+
 void setName(std::string concertName){
     concertName = concertName;
 }
+
 
 void setFriends(std::vector<std::string> friends){
     friends = friends;
 }
 
-int setDesire(int desire){
+
+void setDesire(int desire){
     desire = desire;
 }
+
 
 void setDate(std::tm date){
     date = date;
