@@ -6,10 +6,22 @@
 //  Copyright © 2017 Joshua Crum. All rights reserved.
 //
 
+#include "Concert.h"
 #include <iostream>
+#include <ctime>
+
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    std::vector<std::string> friends = {"Patton", "Pual"};
+    std::tm date;
+    
+    date.tm_mday = 11;
+    date.tm_mon = 0;
+    date.tm_year = 1017;
+    
+    Concert("A7X", friends, 8, date);
+    
     return 0;
 }
