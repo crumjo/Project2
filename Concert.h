@@ -35,6 +35,7 @@ class Concert {
         void setFriends(std::vector<std::string>);
         int setDesire(int desire);
         void setDate(std::tm date);
+        bool operator<(const Concert& other) const;
     
     private:
     

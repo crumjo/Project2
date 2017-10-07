@@ -8,6 +8,7 @@
 
 #include "Concert.h"
 #include <ctime>
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -18,12 +19,12 @@ std::tm date;
 
 
 
-Concert::Concert() {
-    concertName = "None";
-    friends = {""};
-    desire = 0;
-    date = { .tm_mday = 1 }; //FIX ME
-}
+//Concert::Concert() {
+//    concertName = "None";
+//    friends = {""};
+//    desire = 0;
+//    date = { .tm_mday = 0 }; //FIX ME
+//}
 
 
 Concert::Concert(std::string concertName, std::vector<std::string> friends, int desire, std::tm date) {
@@ -72,3 +73,23 @@ void setDesire(int desire){
 void setDate(std::tm date){
     date = date;
 }
+
+
+bool Concert::operator<(const Concert& other) const {
+    
+    if (this -> date.tm_year > other.date.tm_year) {
+        return true;
+    } else if (this -> date.tm_mon > other.date.tm_mon) {
+        return true;
+    } else if (this -> date.tm_mday > other.date.tm_mday) {
+        return true;
+    } else if (this -> desire > other.desire) {
+        return true;
+    } else {
+        return false;
+    }
+    
+}
+
+
+
