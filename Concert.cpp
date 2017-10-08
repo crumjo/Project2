@@ -35,60 +35,62 @@ Concert::Concert(std::string concertName, std::vector<std::string> friends, int 
 }
 
 
-std::string getName(){
+std::string Concert::getName() {
     return concertName;
 }
 
 
-std::vector<std::string> getFriends(){
+std::vector<std::string>  Concert::getFriends() {
     return friends;
 }
 
 
-int getDesire(){
+int  Concert::getDesire() {
     return desire;
 }
 
 
-std::tm getDate(){
+std::tm  Concert::getDate() {
     return date;
 }
 
 
-void setName(std::string concertName){
+void  Concert::setName(std::string concertName) {
     concertName = concertName;
 }
 
 
-void setFriends(std::vector<std::string> friends){
+void  Concert::setFriends(std::vector<std::string> friends) {
     friends = friends;
 }
 
 
-void setDesire(int desire){
+void   setDesire(int desire) {
     desire = desire;
 }
 
 
-void setDate(std::tm date){
+void  Concert::setDate(std::tm date) {
     date = date;
 }
 
 
 bool Concert::operator<(const Concert& other) const {
     
-    if (this -> date.tm_year > other.date.tm_year) {
-        return true;
-    } else if (this -> date.tm_mon > other.date.tm_mon) {
-        return true;
-    } else if (this -> date.tm_mday > other.date.tm_mday) {
-        return true;
-    } else if (this -> desire > other.desire) {
-        return true;
-    } else {
-        return false;
-    }
+    if (this -> date.tm_year != other.date.tm_year) {
+        return (this -> date.tm_year < other.date.tm_year);
+        
+    } else if (this -> date.tm_mon < other.date.tm_mon) {
+        return (this -> date.tm_mon < other.date.tm_mon);
     
+    } else if (this -> date.tm_mday < other.date.tm_mday) {
+        return (this -> date.tm_mday < other.date.tm_mday);
+    
+    } else if (this -> desire > other.desire) {
+        return (this -> desire > other.desire);
+    }
+
+    return false;
 }
 
 
