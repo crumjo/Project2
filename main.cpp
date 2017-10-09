@@ -1,10 +1,6 @@
-//
-//  main.cpp
-//  basic
-//
-//  Created by Joshua Crum on 10/1/17.
-//  Copyright © 2017 Joshua Crum. All rights reserved.
-//
+/*****************************************************************
+ 
+ *****************************************************************/
 
 #include "Concert.h"
 #include <iostream>
@@ -15,6 +11,10 @@
 //COMPILE WITH C++ 11!!!
 //Command: g++ -std=c++11 Concert.cpp main.cpp -o conc
 
+
+/*****************************************************************
+ 
+ *****************************************************************/
 int main(int argc, const char * argv[]) {
 
     std::vector<std::string> friends1 = {"Patton", "Pual"};
