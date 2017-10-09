@@ -17,6 +17,7 @@
 
 /*****************************************************************
  Overloaded ostream << operator to print every element of vector.
+ Signature found on Stack Overflow.
  *****************************************************************/
 std::ostream& operator<<(std::ostream& out,
                          std::vector<Concert> &list) {
