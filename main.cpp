@@ -1,6 +1,8 @@
 /*****************************************************************
  Main method demostrating creation and sorting of concert
  instances.
+ Compile With C++ 11.
+ Command: g++ -std=c++11 Concert.cpp main.cpp -o conc
  
  @author Joshua Crum & Patton Finley
  @version 9 October 2017
@@ -12,20 +14,23 @@
 #include <algorithm>
 
 
-/** Compile With C++ 11 */
-/** Command: g++ -std=c++11 Concert.cpp main.cpp -o conc */
-
 
 /*****************************************************************
  Overloaded ostream << operator to print every element of vector.
  *****************************************************************/
-std::ostream& operator<<(std::ostream& out, std::vector<Concert> &list) {
+std::ostream& operator<<(std::ostream& out,
+                         std::vector<Concert> &list) {
+    
     int size = (int)list.size();
     std::string concerts = "";
     
     for (int i = 0; i < size; i++) {
-        concerts.append(list[i].getName());
-        concerts.append("\n");
+        std::string temp = list[i].getName() + ": " +
+        std::to_string(list[i].getDate().tm_mon) + "/" +
+        std::to_string(list[i].getDate().tm_mday) + "/" +
+        std::to_string(list[i].getDate().tm_year) + "\n";
+        
+        concerts.append(temp);
     }
     
     out << concerts;
@@ -43,10 +48,13 @@ int main(int argc, const char * argv[]) {
     std::vector<std::string> friends1 = {"Patton", "Pual"};
     std::vector<std::string> friends2 = {"Kyle", "Dan"};
     std::vector<std::string> friends3 = {"Me", "Myself", "I"};
-    std::vector<std::string> friends4 = {"Talia", "Caitlin","Chris","Mike"};
+    std::vector<std::string> friends4 = {"Talia", "Caitlin",
+        "Chris","Mike"};
     std::vector<std::string> friends5 = {"Patton", "Josh","Pual"};
-    std::vector<std::string> friends6 = {"Fred", "Shaggy","Daphne", "Velma","Scooby"};
-    std::vector<std::string> friends7 = {"Micheal","Josh","Justin"};
+    std::vector<std::string> friends6 = {"Fred", "Shaggy","Daphne",
+        "Velma","Scooby"};
+    std::vector<std::string> friends7 = {"Micheal","Josh",
+        "Justin"};
     std::vector<std::string> friends8 = {"Kyle", "Clyde", "Stan"};
     std::vector<std::string> friends9 = {"Rick","Morty"};
     std::vector<std::string> friends10 = {"Dylan","Sara","Tara"};
@@ -67,39 +75,39 @@ int main(int argc, const char * argv[]) {
     date3.tm_year = 2018;
 
     std::tm date4;
-    date3.tm_mday = 31;
-    date3.tm_mon = 10;
-    date3.tm_year = 2017;
+    date4.tm_mday = 31;
+    date4.tm_mon = 10;
+    date4.tm_year = 2017;
 
     std::tm date5;
-    date3.tm_mday = 2;
-    date3.tm_mon = 2;
-    date3.tm_year = 2022;
+    date5.tm_mday = 2;
+    date5.tm_mon = 2;
+    date5.tm_year = 2022;
 
     std::tm date6;
-    date3.tm_mday = 20;
-    date3.tm_mon = 7;
-    date3.tm_year = 2017;
+    date6.tm_mday = 20;
+    date6.tm_mon = 7;
+    date6.tm_year = 2017;
 
     std::tm date7;
-    date3.tm_mday = 16;
-    date3.tm_mon = 10;
-    date3.tm_year = 2019;
+    date7.tm_mday = 16;
+    date7.tm_mon = 10;
+    date7.tm_year = 2019;
 
     std::tm date8;
-    date3.tm_mday = 10;
-    date3.tm_mon = 10;
-    date3.tm_year = 2020;
+    date8.tm_mday = 10;
+    date8.tm_mon = 10;
+    date8.tm_year = 2020;
 
     std::tm date9;
-    date3.tm_mday = 17;
-    date3.tm_mon = 12;
-    date3.tm_year = 2017;
+    date9.tm_mday = 17;
+    date9.tm_mon = 12;
+    date9.tm_year = 2017;
 
     std::tm date10;
-    date3.tm_mday = 20;
-    date3.tm_mon = 10;
-    date3.tm_year = 2019;
+    date10.tm_mday = 20;
+    date10.tm_mon = 10;
+    date10.tm_year = 2019;
 
     Concert c1 = Concert("A7X", friends1, 8, date1);
     Concert c2 = Concert("Volbeat", friends2, 6, date2);

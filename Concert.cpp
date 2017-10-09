@@ -151,10 +151,10 @@ bool Concert::operator<(const Concert& other) const {
     if (this -> date.tm_year != other.date.tm_year) {
         return (this -> date.tm_year < other.date.tm_year);
         
-    } else if (this -> date.tm_mon < other.date.tm_mon) {
+    } else if (this -> date.tm_mon != other.date.tm_mon) {
         return (this -> date.tm_mon < other.date.tm_mon);
     
-    } else if (this -> date.tm_mday < other.date.tm_mday) {
+    } else if (this -> date.tm_mday != other.date.tm_mday) {
         return (this -> date.tm_mday < other.date.tm_mday);
     
     } else if (this -> desire > other.desire) {
