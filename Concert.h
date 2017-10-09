@@ -1,11 +1,14 @@
 /*****************************************************************
+ Header file containing all the methods associated with the
+ concert class.
  
+ @author Joshua Crum & Patton Finley
+ @version 9 October 2017
  *****************************************************************/
 
 #ifndef Concert_h
 #define Concert_h
-
-#endif /* Concert_h */
+#endif /** Concert_h */
 
 #include <ctime>
 #include <string>
@@ -14,9 +17,10 @@
 
 
 /*****************************************************************
- 
+ Class representing a concert with a name, list of friends going,
+ a desire to go to the concert (represented as an integer), and
+ the date of the concert.
  *****************************************************************/
-
 class Concert {
     
     public:
@@ -24,7 +28,8 @@ class Concert {
         /** Empty constructor */
         Concert();
     
-        Concert(std::string concertName, std::vector<std::string> friends, int desire, std::tm date);
+        Concert(std::string concertName, std::vector<std::string>
+                friends, int desire, std::tm date);
     
         /** Getters */
         std::string getName();

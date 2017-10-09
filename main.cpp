@@ -1,5 +1,9 @@
 /*****************************************************************
+ Main method demostrating creation and sorting of concert
+ instances.
  
+ @author Joshua Crum & Patton Finley
+ @version 9 October 2017
  *****************************************************************/
 
 #include "Concert.h"
@@ -13,7 +17,8 @@
 
 
 /*****************************************************************
- 
+ Main method that creates ten concert objects, puts them into a
+ vector, and sorts them.
  *****************************************************************/
 int main(int argc, const char * argv[]) {
 
