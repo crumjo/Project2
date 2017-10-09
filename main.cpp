@@ -25,10 +25,12 @@ std::ostream& operator<<(std::ostream& out,
     std::string concerts = "";
     
     for (int i = 0; i < size; i++) {
-        std::string temp = list[i].getName() + ": " +
+        std::string temp = list[i].getName() + ":  " +
         std::to_string(list[i].getDate().tm_mon) + "/" +
         std::to_string(list[i].getDate().tm_mday) + "/" +
-        std::to_string(list[i].getDate().tm_year) + "\n";
+        std::to_string(list[i].getDate().tm_year) +
+        "  Desire: " + std::to_string(list[i].getDesire()) +
+        "\n\n";
         
         concerts.append(temp);
     }
@@ -49,15 +51,15 @@ int main(int argc, const char * argv[]) {
     std::vector<std::string> friends2 = {"Kyle", "Dan"};
     std::vector<std::string> friends3 = {"Me", "Myself", "I"};
     std::vector<std::string> friends4 = {"Talia", "Caitlin",
-        "Chris","Mike"};
-    std::vector<std::string> friends5 = {"Patton", "Josh","Pual"};
-    std::vector<std::string> friends6 = {"Fred", "Shaggy","Daphne",
-        "Velma","Scooby"};
-    std::vector<std::string> friends7 = {"Micheal","Josh",
+        "Chris", "Mike"};
+    std::vector<std::string> friends5 = {"Patton", "Josh", "Pual"};
+    std::vector<std::string> friends6 = {"Fred", "Shaggy", "Daphne",
+        "Velma", "Scooby"};
+    std::vector<std::string> friends7 = {"Micheal", "Josh",
         "Justin"};
     std::vector<std::string> friends8 = {"Kyle", "Clyde", "Stan"};
-    std::vector<std::string> friends9 = {"Rick","Morty"};
-    std::vector<std::string> friends10 = {"Dylan","Sara","Tara"};
+    std::vector<std::string> friends9 = {"Rick", "Morty"};
+    std::vector<std::string> friends10 = {"Dylan", "Sara", "Tara"};
 
     std::tm date1;
     date1.tm_mday = 12;
@@ -104,11 +106,6 @@ int main(int argc, const char * argv[]) {
     date9.tm_mon = 12;
     date9.tm_year = 2017;
 
-    std::tm date10;
-    date10.tm_mday = 20;
-    date10.tm_mon = 10;
-    date10.tm_year = 2019;
-
     Concert c1 = Concert("A7X", friends1, 8, date1);
     Concert c2 = Concert("Volbeat", friends2, 6, date2);
     Concert c3 = Concert("Jimmy Hendrix", friends3, 7, date3);
@@ -118,7 +115,7 @@ int main(int argc, const char * argv[]) {
     Concert c7 = Concert("21 Pilots", friends7, 2, date7);
     Concert c8 = Concert("Paramore", friends8, 3, date8);
     Concert c9 = Concert("Dirty Heads", friends9, 9, date9);
-    Concert c10 = Concert("Aerosmith", friends10, 3, date10);
+    Concert c10 = Concert("Aerosmith", friends10, 3, date9);
 
     std::vector<Concert> c_list {c3, c1, c2, c8, c5, c4, c6, c7, c10, c9};
     std::sort (c_list.begin(), c_list.end());
