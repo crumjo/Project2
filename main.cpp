@@ -9,6 +9,8 @@
 #include "Concert.h"
 #include <iostream>
 #include <ctime>
+#include <algorithm>
+
 
 //COMPILE WITH C++ 11!!!
 //Command: g++ -std=c++11 Concert.cpp main.cpp -o conc
@@ -85,9 +87,9 @@ int main(int argc, const char * argv[]) {
     Concert c7 = Concert("21 Pilots", friends7, 2, date7);
     Concert c8 = Concert("Paramore", friends8, 3, date8);
     Concert c9 = Concert("Dirty Heads", friends9, 9, date9);
-    Concert c10 = Concert("Aerosmith", friends10, 3, date10)
+    Concert c10 = Concert("Aerosmith", friends10, 3, date10);
 
-    std::vector<Concert> c_list {c3, c1, c2,c8, c5, c4, c6, c7, c10, c9};
+    std::vector<Concert> c_list {c3, c1, c2, c8, c5, c4, c6, c7, c10, c9};
 
     std::cout << "Before Sort:\n\n";
 
@@ -96,7 +98,7 @@ int main(int argc, const char * argv[]) {
         std::cout << c_list[i].getName() << "\n";
     }
 
-    std::sort(c_list.begin(), c_list.end());
+    std::sort (c_list.begin(), c_list.end());
 
     std::cout << "\nAfter sort: \n\n";
 
