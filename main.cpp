@@ -12,8 +12,26 @@
 #include <algorithm>
 
 
-//COMPILE WITH C++ 11!!!
-//Command: g++ -std=c++11 Concert.cpp main.cpp -o conc
+/** Compile With C++ 11 */
+/** Command: g++ -std=c++11 Concert.cpp main.cpp -o conc */
+
+
+/*****************************************************************
+ Overloaded ostream << operator to print every element of vector.
+ *****************************************************************/
+std::ostream& operator<<(std::ostream& out, std::vector<Concert> &list) {
+    int size = (int)list.size();
+    std::string concerts = "";
+    
+    for (int i = 0; i < size; i++) {
+        concerts.append(list[i].getName());
+        concerts.append("\n");
+    }
+    
+    out << concerts;
+    
+    return out;
+}
 
 
 /*****************************************************************
@@ -95,21 +113,8 @@ int main(int argc, const char * argv[]) {
     Concert c10 = Concert("Aerosmith", friends10, 3, date10);
 
     std::vector<Concert> c_list {c3, c1, c2, c8, c5, c4, c6, c7, c10, c9};
-
-    std::cout << "Before Sort:\n\n";
-
-    int size = (int)c_list.size();
-    for (int i = 0; i < size; i++) {
-        std::cout << c_list[i].getName() << "\n";
-    }
-
     std::sort (c_list.begin(), c_list.end());
-
-    std::cout << "\nAfter sort: \n\n";
-
-    for (int i = 0; i < size; i++) {
-        std::cout << c_list[i].getName() << "\n";
-    }
+    std::cout << c_list;
 
     return 0;
 }

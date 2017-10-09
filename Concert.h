@@ -46,9 +46,16 @@ class Concert {
     
     private:
     
+        /** Name of the concert. */
         std::string concertName;
+    
+        /** List of friends going. */
         std::vector<std::string> friends;
+    
+        /** Desire to see the concert. */
         int desire;
+    
+        /** Date of the concert. */
         std::tm date;
     
 };
